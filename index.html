@@ -1,32 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>HTML Cheat Sheet</title>
-    </head>
-    <body>
-        <p class="patrick">
-            This is line 1
 
-            This is line 2
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Cheat Sheet</title>
+</head>
 
+<body>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
 
-            This is line 3
+    <p>I'm a `p` tag
 
+        I have a bunch of white space above and below me
 
-
-
-            This is line 4
-        </p>
-        <p  class="shawn">
-
-        This line 1
     </p>
-    <img src="wireframe.png">
-</img>
+    <p>
+        Note! <em>The <strong>HTML</strong> tag should only have the <strong>HEAD</strong> and <strong>BODY</strong>
+            tags as children</em>
+    </p>
+    <pre>
+            I'm a pre tag
+
+
+I have a bunch of white space above and below me
+            
+
+                    
+        </pre>
+    <blockquote cite="https://www.techelevator.com">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sit
+        accusamus itaque a vitae, atque eum nam ab explicabo repudiandae nesciunt
+        sequi fugiat sint eveniet iste facilis quas distinctio voluptatum?
+    </blockquote>
+
+    <a href="www.google.com">Google.com</a>
+    <br />
+    <img src="wireframe.png" width="500" />
     <p class="clint">
-        this is the third paragraph
+        This is Clint's paragraph.
     </p>
-    </body>
+
+    <ul>
+        <li>Imperative Languages</li>
+        <ul>
+            <li>C#</li>
+            <li>Java</li>
+        </ul>
+        <li>Functional Languages</li>
+        <ul>
+            <li>HTML</li>
+            <li>SQL</li>
+        </ul>
+    </ul>
+
+    <ol>
+        <li>C#</li>
+        <li>Java</li>
+        <li>HTML</li>
+        <li>SQL</li>
+    </ol>
+
+    <ul>
+        <li><a>Home</a></li>
+        <li><a>Products</a></li>
+        <li><a>My Profile</a></li>
+        <li><a>About Us</a></li>
+    </ul>
+
+
+<p>Programming Languages by Year Released</p>
+<table>
+    <thead> <!-- optional tag -->
+        <tr>
+            <th>Name</th>
+            <th>Year Released</th>
+            <th>Comments</th>
+        </tr>
+    </thead>
+    <tbody>  <!-- optional tag -->
+        <tr>
+            <td>C</td>
+            <td>1972</td>
+        </tr>
+        <tr>
+            <td>Java</td>
+            <td>1996</td>
+            <td>extra</td>
+        </tr>
+        <tr>
+            <td>JavaScript</td>
+            <td>1996</td>
+        </tr>
+        <tr>
+            <td>C#</td>
+            <td>2002</td>
+        </tr>
+        <tr>
+            <td>Rust</td>
+            <td>2010</td>
+        </tr>
+        <tr>
+            <td>Swift</td>
+            <td>2014</td>
+        </tr>
+        <tr>
+            <td>Kotlin</td>
+            <td>2016</td>
+        </tr>
+    </tbody>
+    <tfoot>  <!-- optional tag -->
+      <tr>
+        <td>Ordered by year released.</td>
+      </tr>
+    </tfoot>
+</table>
+
+<h1>Registration Form</h1>
+<form action="http://localhost:3000/api/users/login" method="GET">
+  <label for="firstName">First Name:</label>
+  <input id="firstName" name="firstName" type="text" />
+
+  <label for="lastName">Last Name:</label>
+  <input id="lastName" name="lastName" type="text" />
+
+  <label for="email">Email Address:</label>
+  <input id="email" name="email" type="email" />
+  <input type="submit"/>
+</form>
+</body>
+
 </html>
