@@ -1,0 +1,59 @@
+body {
+    background-color: gainsboro;
+}
+
+header {
+    background-color: pink;
+    margin: 1px;
+}
+
+header > h1 {
+    padding: 0px;
+    margin: 0px;
+}
+
+nav {
+    background-color: beige;
+    margin: 1px;
+    list-style-type: none;    
+}
+
+.nav-link {
+    display: inline-block;
+    font-size: 20px;
+    padding: 20px;
+}
+
+
+figure {
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 10px;
+    background-color:white;
+
+}
+
+main {
+    border: 1px solid blue;
+}
+
+article {
+    display: inline-block;    
+    border: 1px solid red;
+    padding: 10px;
+}
+
+section {
+    display: inline-block;    
+    border: 1px solid purple;
+    padding: 10px;
+    background-color: antiquewhite;
+    border-radius: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+footer {
+    background-color: aquamarine;
+    margin: 1px;
+}

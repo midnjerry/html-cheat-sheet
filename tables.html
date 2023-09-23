@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Cheat Sheet</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .simple-table {
+            border: 1px purple solid;
+        }
+
+        .simple-row {
+            margin: 1px;
+            border: 1px blue solid;
+        }
+
+        .simple-td {
+            margin: 1px;
+            border: 1px gray solid;
+        }
+
+        pre {
+            background-color: aliceblue;
+            border: 1px black solid;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>HTML CHEAT SHEET</h1>
+    </header>
+    <nav>
+        <ul>
+            <li class="nav-link">
+                <a href="index.html">Headings</a>
+            </li>
+            <li class="nav-link">
+                <a href="tables.html">Tables</a>
+            </li>
+            <li class="nav-link">
+                <a href="lists.html">Lists</a>
+            </li>
+            <li class="nav-link">
+                <a href="forms.html">Forms</a>
+            </li>
+            <li class="nav-link">
+                <a href="semantic-tags.html">Semantic Tags</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <article>
+            <h2>Tables</h2>
+            <h3>Basic tables with TR and TD</h3>
+            <p>Tables are a very convenient means to display structured data.
+                Tables can be boiled down to <strong>rows</strong> and <strong>cells</strong>.
+
+                A simple table can be written as:
+            </p>
+            <pre>
+&lt;table class="simple-table"&gt;
+    &lt;tr class="simple-row"&gt;
+        &lt;td class="simple-td"&gt;
+            Data item 1
+        &lt;/td&gt;
+        &lt;td class="simple-td"&gt;
+            Data time 2
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr class="simple-row"&gt;
+        &lt;td class="simple-td"&gt;
+            Data item 3
+        &lt;/td&gt;
+        &lt;td class="simple-td"&gt;
+            Data item 4
+        &lt;/td&gt;
+        &lt;td class="simple-td"&gt;
+            Data item 5
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="simple-td"&gt;
+            Data item 6
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="simple-td" colspan="2"&gt;
+            Data item 7
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+
+            <p>
+                Which looks like this:
+            </p>
+
+
+            <table class="simple-table">
+                <tr class="simple-row">
+                    <td class="simple-td">
+                        Data item 1
+                    </td>
+                    <td class="simple-td">
+                        Data time 2
+                    </td>
+                </tr>
+                <tr class="simple-row">
+                    <td class="simple-td">
+                        Data item 3
+                    </td>
+                    <td class="simple-td">
+                        Data item 4
+                    </td>
+                    <td class="simple-td">
+                        Data item 5
+                    </td>
+                </tr>
+                <tr>
+                    <td class="simple-td">
+                        Data item 6
+                    </td>
+                </tr>
+                <tr>
+                    <td class="simple-td" colspan="2">
+                        Data item 7
+                    </td>
+                </tr>
+            </table>
+            <p>
+                Typically the data will be very structured, but notice that the number of columns are determines by the number of cells in a row.  If you wanted to expand a cell to take up X columns, you can use <em>colspan="X"</em>.  Refer to the example above.
+            </p>
+            <h3>Tables with head, body, and footer</h3>
+
+        </article>
+        <section>
+            <h2>Did you know?</h2>
+            <p>
+                You can use <strong>&amplt;</strong> and <strong>&ampgt;</strong> to display the less-than sign
+                (<strong>&lt;</strong>) and the greater-than sign (<strong>&gt;</strong>). These are known as <em>HTML
+                    codes</em>.
+            </p>
+            <p>
+                This is useful to display HTML without having the browser render it. In fact I had to use HTML codes to
+                write the '<strong>&</strong>', '<strong>&lt;</strong>', and '<strong>&gt;</strong>' in the above
+                sentence. My brain hurts!
+            </p>
+
+        </section>
+    </main>
+    <footer>
+        FOOTER: Have a blessed day!
+    </footer>
+</body>
+
+</html>
