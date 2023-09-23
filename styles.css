@@ -57,3 +57,10 @@ footer {
     background-color: aquamarine;
     margin: 1px;
 }
+
+/* For code samples */
+pre {
+    background-color: aliceblue;
+    border: 1px black solid;
+    border-radius: 5px;
+}
