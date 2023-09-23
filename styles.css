@@ -35,6 +35,7 @@ figure {
 
 main {
     border: 1px solid blue;
+    background-color: bisque;
 }
 
 article {
@@ -50,7 +51,7 @@ section {
     background-color: antiquewhite;
     border-radius: 25px;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 footer {
