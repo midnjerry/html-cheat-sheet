@@ -20,6 +20,22 @@
             margin: 1px;
             border: 1px gray solid;
         }
+
+        tbody>tr:nth-child(even) {
+            background-color: goldenrod;
+        }
+
+        tbody>tr:nth-child(odd) {
+            background-color: burlywood;
+        }
+
+        th {
+            background-color: cadetblue;
+        }
+        td {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
     </style>
 </head>
 
@@ -126,9 +142,147 @@
                 </tr>
             </table>
             <p>
-                Typically the data will be very structured, but notice that the number of columns are determines by the number of cells in a row.  If you wanted to expand a cell to take up X columns, you can use <em>colspan="X"</em>.  Refer to the example above.
+                Typically the data will be very structured, but notice that the number of columns are determines by the
+                number of cells in a row. If you wanted to expand a cell to take up X columns, you can use
+                <em>colspan="X"</em>. Refer to the example above.
             </p>
             <h3>Tables with head, body, and footer</h3>
+            <p>Modern tables now have thead, tbody, and tfoot tags that can be used with CSS to organize the table
+                content better.</p>
+            <h4>&lt;thead&gt;</h4>
+            <p>THEAD is used to specify the Table Heading row and is used in lieu of &lt;TR&GT;. The heading row is the
+                first row with the names for each of the
+                columns. A table heading cell is typically specified by &lt;TH&gt;, not &lt;TD&gt;. &lt;TH&gt; content
+                is automatically formatted with strong emphasis as a table label</p>
+            <h4>&lt;tbody&gt;</h4>
+            <p>TBODY is the section for your data. &lt;TR&gt; is the row and &ltTD&gt; represents a cell.</p>
+            <h4>&lt;tfoot&gt;</h4>
+            <p>TFOOT is the bottom row of your table and can be used to contain aggregate data, such as totals.</p>
+            <h4>&lt;caption&gt;</h4>
+            <p>A description of the table that is read by users, screen readers, and bots.</p>
+
+            <p>Here is example code:</p>
+            <pre>
+&lt;table&gt;
+    &lt;caption&gt;
+        My favorite Mortal Kombat characters
+    &lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Favorite Move&lt;/th&gt;
+        &lt;th&gt;Button Combination&lt;/th&gt;
+        &lt;th&gt;Fatalities&lt;/th&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Baraka&lt;/td&gt;
+            &lt;td&gt;Blade Spark&lt;/td&gt;
+            &lt;td&gt;Down Back Square&lt;/td&gt;
+            &lt;td&gt;3&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Cassie Cage&lt;/td&gt;
+            &lt;td&gt;Dual Wielding&lt;/td&gt;
+            &lt;td&gt;Back Forward Square&lt;/td&gt;
+            &lt;td&gt;6&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Erron Black&lt;/td&gt;
+            &lt;td&gt;Zaterrean Spit&lt;/td&gt;
+            &lt;td&gt;Down Back Square&lt;/td&gt;
+            &lt;td&gt;2&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Frost&lt;/td&gt;
+            &lt;td&gt;Ice Auger&lt;/td&gt;
+            &lt;td&gt;Back Forward Square&lt;/td&gt;
+            &lt;td&gt;8&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Johnny Cage&lt;/td&gt;
+            &lt;td&gt;Straight Forceball&lt;/td&gt;
+            &lt;td&gt;Back Forward Triangle&lt;/td&gt;
+            &lt;td&gt;3&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Kabal&lt;/td&gt;
+            &lt;td&gt;Buzzsaw&lt;/td&gt;
+            &lt;td&gt;Back Forward Square&lt;/td&gt;
+            &lt;td&gt;2&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Kano&lt;/td&gt;
+            &lt;td&gt;Blade Toss&lt;/td&gt;
+            &lt;td&gt;Back Forward Square&lt;/td&gt;
+            &lt;td&gt;5&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;th colspan="3"&gt;Total Fatalities&lt;/th&gt;
+        &lt;th&gt;29&lt;/th&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+            </pre>
+            <p>And this is what the code looks like with styling:</p>
+            <table>
+                <caption>
+                    My favorite Mortal Kombat characters
+                </caption>
+                <thead>
+                    <th>Name</th>
+                    <th>Favorite Move</th>
+                    <th>Button Combination</th>
+                    <th>Fatalities</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Baraka</td>
+                        <td>Blade Spark</td>
+                        <td>Down Back Square</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Cassie Cage</td>
+                        <td>Dual Wielding</td>
+                        <td>Back Forward Square</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>Erron Black</td>
+                        <td>Zaterrean Spit</td>
+                        <td>Down Back Square</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Frost</td>
+                        <td>Ice Auger</td>
+                        <td>Back Forward Square</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>Johnny Cage</td>
+                        <td>Straight Forceball</td>
+                        <td>Back Forward Triangle</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Kabal</td>
+                        <td>Buzzsaw</td>
+                        <td>Back Forward Square</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Kano</td>
+                        <td>Blade Toss</td>
+                        <td>Back Forward Square</td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <th colspan="3">Total Fatalities</th>
+                    <th>29</th>
+                </tfoot>
+            </table>
 
         </article>
         <section>
