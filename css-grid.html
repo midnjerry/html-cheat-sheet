@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Cheat Sheet</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="prism.css">    
+    <link rel="stylesheet" href="prism.css">
 
     <style>
-        .container {            
+        .container {
             display: grid;
             grid-template-columns: 25% 25% 25% 25%;
             grid-template-rows: auto;
@@ -19,30 +19,34 @@
                 "footer footer footer footer"; /* note the semicolon! */
         }
 
-        .container > div {
+        .container>div {
             border: 1px black solid;
             border-radius: 10px;
             padding: 10px;
         }
 
         .top {
-            background-color: rgb(248,147,38);
-            grid-area: header;  /* We assign the elements to `header` section*/
+            background-color: rgb(248, 147, 38);
+            grid-area: header;
+            /* We assign the elements to `header` section*/
         }
 
         .left-side {
-            background-color: rgb(60,190,230);
-            grid-area: main;  /* We assign the elements to `main` section*/
+            background-color: rgb(60, 190, 230);
+            grid-area: main;
+            /* We assign the elements to `main` section*/
         }
 
         .right-side {
             background-color: rgb(235, 112, 112);
-            grid-area: sidebar;   /* We assign the elements to `sidebar` section*/
+            grid-area: sidebar;
+            /* We assign the elements to `sidebar` section*/
         }
 
         .bottom {
             background-color: rgb(115, 197, 117);
-            grid-area: footer;   /* We assign the elements to `footer` section*/
+            grid-area: footer;
+            /* We assign the elements to `footer` section*/
         }
     </style>
 </head>
@@ -81,8 +85,8 @@
             <h2>CSS Grid</h2>
             <p>CSS Grid gives you incredible control over splitting a page into subsections.</p>
             <p>Use the following page as a reference:
-                <a
-                    href="https://css-tricks.com/snippets/css/complete-guide-grid/">https://css-tricks.com/snippets/css/complete-guide-grid/</a>
+                <a href="https://css-tricks.com/snippets/css/complete-guide-grid/"
+                    target="_blank">https://css-tricks.com/snippets/css/complete-guide-grid/</a>
             </p>
             <p>There are multiple ways to setup a grid. We will cover the most common use-cases</p>
             <h3>Start with a container grid then define each cell</h3>
@@ -125,20 +129,20 @@
 }
 </code></pre>
             <pre><code class="language-html">
-&lt;main class="container"&gt;
+&lt;div class="container"&gt;
     &lt;div class="top"&gt;Orange&lt;/div&gt;
     &lt;div class="left-side"&gt;Blue&lt;/div&gt;
     &lt;div class="right-side"&gt;Red&lt;/div&gt;
     &lt;div class="bottom"&gt;Green&lt;/div&gt;
-&lt;/main&gt;
+&lt;/div&gt;
 </code></pre>
 
-            <main class="container">
-    <div class="top">Orange</div>
-    <div class="left-side">Blue</div>
-    <div class="right-side">Red</div>
-    <div class="bottom">Green</div>
-        </main>
+            <div class="container">
+                <div class="top">Orange</div>
+                <div class="left-side">Blue</div>
+                <div class="right-side">Red</div>
+                <div class="bottom">Green</div>
+            </div>
         </article>
         <section>
             <h2>Did you know?</h2>

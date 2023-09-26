@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Cheat Sheet</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="prism.css">
+    <style>
+        .parent {
+            margin: 50px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .parent > div {
+            border: 1px black solid;
+            padding: 10px;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 1.5em;
+        }
+    </style>
 </head>
 
 <body>
@@ -40,6 +58,102 @@
     <main>
         <article>
             <h2>Flexbox</h2>
+            <p>Flexbox seems weird at first, but once you get the hang of it, it's very easy.  Flexbox only affects
+                the DIRECT CHILDREN of a tag.  You can then either organize the children as a row or column.  And that's it!
+            </p>
+            <p>
+                It seems very simplistic, but the rules of Flexbox build on top of this simplicity to make a powerful layout tool.  That being said, Flexbox will solve about ~70%-80% of your problems.  
+                For those situations where Flexbox is not an easy solution, Flexbox becomes extremely frustrating.
+            </p>
+            <p>
+                Use the following link for reference: <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox" target="_blank">https://css-tricks.com/snippets/css/a-guide-to-flexbox</a>
+            </p>
+            <p>So how do you use it?  First you need to break your layout into a series of cells that can be organized as columns or as rows. Let's take a look at an example.  This is a 
+                snippet from the <a href="https://mars.nasa.gov/mer/" target="_blank">NASA MARS ROVER</a> page.  Let's focus on recreating the white section.
+            </p>
+
+            <img src="images/nasa-snapshot-01.png"/>
+
+            <p>
+                Let's mark out the entire section with a div.
+            </p>
+
+<pre><code class="language-html">
+&lt;style&gt;
+.parent {
+    margin: 50px; /* Adding margin to make it easier to see */
+}
+&lt;/style&gt;
+    
+&lt;div class="parent"&gt;
+&lt;/div&gt;
+</code></pre>
+<img src="images/nasa-snapshot-02.png"/>
+<p>
+    Now let's look for any rows or columns that we split the picture into.  As you can see, we can cleanly separate
+    the page into two segments stacked on top of each other.  Remember, flexbox only has an effect on the children of a tag.
+    That being said, the two CHILDREN tags of the parent tag should be oriented in a column format.
+</p>
+<img src="images/nasa-snapshot-03.png"/>
+<p>Let's set up our children tags and then orient them in a column.</p>
+<pre><code class="language-html">
+&lt;style&gt;
+.parent {
+    margin: 50px; /* Adding margin to make it easier to see */
+    display: flex;
+    flex-direction: column;
+}
+&lt;/style&gt;
+    
+&lt;div class="parent"&gt;
+    &lt;div&gt;Rover Update&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>
+    This is what we have so far.
+</p>
+<div class="parent">
+    <div class>Rover Update</div>
+    <div class></div>
+</div>
+<p>Let's center the top text.  And modify the "title" div to have 30px of top padding.  This does 2 things:</p>
+<ol>
+    <li>Fills out space</li>
+    <li>Pushes the text down</li>
+</ol>
+<pre><code class="language-html">
+&lt;style&gt;
+.parent {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    text-align: center;
+    font-size: 1.5em;    
+}
+&lt;/style&gt;
+    
+&lt;div class="parent"&gt;
+    &lt;div class="title"&gt;Rover Update&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+    </code></pre>
+
+<div class="parent">
+    <div class="title">Rover Update</div>
+    <div class></div>
+</div>
+
+
+<img src="images/nasa-snapshot-04.png"/>
+<img src="images/nasa-snapshot-05.png"/>
+
+            
+
+
         </article>
         <section>
             <h2>Did you know?</h2>
@@ -55,6 +169,7 @@
     <footer>
         FOOTER: Have a blessed day!
     </footer>
+    <script src="prism.js"></script>
 </body>
 
 </html>
