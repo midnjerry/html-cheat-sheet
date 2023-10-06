@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Cheat Sheet</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="prism.css">
 </head>
 
 <body>
@@ -42,23 +43,47 @@
     </nav>
     <main>
         <article>
-            <h2>Lists</h2>
+            <h2>Array Higher Order Functions</h2>
             <ul>
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <ol>
-                    <li>SubItem 1</li>
-                    <li>SubItem 2</li>
-                    <li>SubItem 3</li>
-                </ol>
-                <li>Item 3</li>
-            </ul>       
+                <li>.forEach()</li>
+                <li>.map()</li>
+                <li>.reduce()</li>
+                <li>.filter()</li>
+            </ul>
 
-            <ol>
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
-            </ol>
+            <h3>.forEach()</h3>
+            <p>.forEach() iterates through each element executing a provided function for each element.</p>
+
+<pre><code class="language-javascript">
+const array = ["jack", "and", "jill", "went", "up", "the", "hill"];
+
+function displayString(str){
+    console.log(str);
+}
+
+array.forEach(displayString);
+</code></pre>
+
+<h4>Output:</h4>
+<pre><code class="language-md">
+jack
+and
+jill
+went
+up
+the
+hill
+</code></pre>
+
+<p>You can use an anonymous function (most common) as well</p>
+<pre><code class="language-javascript">
+const array = ["jack", "and", "jill", "went", "up", "the", "hill"];
+
+array.forEach((element) => { console.log(element); });
+</code></pre>
+
+
+
         </article>
         <section>
             <h2>Did you know?</h2>
@@ -74,6 +99,7 @@
     <footer>
         FOOTER: Have a blessed day!
     </footer>
+    <script src="prism.js"></script>
 </body>
 
 </html>

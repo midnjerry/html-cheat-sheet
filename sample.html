@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="friend-list">
+        <li>Shawn</li>
+        <li>Jeff</li>
+        <li>Clint</li>
+    </ul>
+        
+    <p class="red">Hello world</p>
+    <p class="red">I love the color red.</p>
+    <p class="red">random text</p>
+    <input id="friend-input" type="text" placeholder="Add Friend"/>
+    <button id="actionButton">Action</button>
+    <button id="addFriendButton">Add Friend</button>
+    <button id="press-me">Press me</button>
+    <script>
+        let i = 0;
+        let x_pos = 10;
+        let y_pos = 300;
+        let button = document.getElementById('actionButton');
+        let addFriendButton = document.querySelector('#addFriendButton');
+        let pressMeButton = document.getElementById('press-me');
+        button.addEventListener('click', (event) =>{
+            let pTagArray = document.querySelectorAll('.red');
+            pTagArray[i % 3].textContent = 'I was changed by JavaScript';
+            i++;
+        });
+        
+        addFriendButton.addEventListener('click', (event) => {
+            let input = document.getElementById('friend-input');
+
+            let ul = document.getElementById('friend-list');
+            let li = document.createElement('li');
+            li.innerHTML = input.value;
+            ul.appendChild(li);
+            input.value = '';
+        });
+
+        pressMeButton.addEventListener('mouseover', (event)=> {
+            let pTag = document.querySelector('.red');
+            pTag.textContent = 'you moused over the button';
+            y_pos += 40;
+            x_pos += 40;
+            pressMeButton.style.left = x_pos+'px';
+            pressMeButton.style.top = y_pos+'px';
+        })
+
+        pressMeButton.style.position = "absolute";
+        pressMeButton.style.left = x_pos+'px';
+        pressMeButton.style.top = y_pos+'px';
+
+        pressMeButton.addEventListener('mouseout', (event)=> {
+            let pTag = document.querySelector('.red');
+            pTag.textContent = 'you left the button';
+        })
+
+
+    </script>
+</body>
+</html>

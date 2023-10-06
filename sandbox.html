@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="prism.css">
+    <style>
+        p {
+            background-color: red;
+            border: 5px green dashed;
+        }
+
+        #zombie {
+            border: 5px blue dotted
+        }
+
+        .double-border {
+            border: 10px purple double
+        }
+
+        /* .card-container > div {
+            border: 1px black solid;
+            padding: 30px;
+        } */
+
+        .card-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card {
+            border: 1px black solid;
+            padding: 30px;
+            margin: 10px;
+        }
+
+        .zombie {
+            background-color: green;
+        }
+
+        .werewolf {
+            background-color: brown;
+        }
+
+        .vampire {
+            background-color: purple;
+        }
+
+        .actions {
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            gap: 30px;
+            justify-content: space-evenly;
+        }
+
+        .actions>li {
+            background-color: white;
+            border: 1px black solid;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .parent {
+            border: 5px black solid;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .child1 {
+            border: 2px red solid;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        .child2 {
+            border: 2px blue solid;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+            align-items: center;
+            padding: 20px;
+        }
+        .text {
+           display: flex;
+           flex-direction: column; 
+           width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Query Selectors</h1>
+
+    <p>A query selector is the methodology used to select tags in the Document Object Model</p>
+    <div>
+        <img src="images/mars-exploration-rover.png" width="50" />
+        <span>Image text</span>
+        <div id="zombie">Zombie</div>
+        <div>Werewolf</div>
+        <div class="double-border">Maher the Conquerer</div>
+        <section class="double-border">
+            <p>
+                Section area
+            </p>
+            <p>
+                SDsd
+            </p>
+            adsfadf adfadf dfadsf
+        </section>
+        <section class="card-container">
+            <div class="card zombie">
+                <p>Zombie</p>
+            </div>
+            <div class="card werewolf">
+                <p>Werewolf</p>
+            </div>
+            <div class="card vampire">
+                <p>Vampire</p>
+                <ul class="actions">
+                    <li>Attack</li>
+                    <li>Bite</li>
+                    <li>Hypnotic Stare</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <ul class="">
+            <li>Attack</li>
+            <li>Bite</li>
+            <li>Hypnotic Stare</li>
+        </ul>
+    </div>
+
+    <section class="parent">
+        <div class="child1">Rover Update</div>
+        <div class="child2">
+            <div class="rover">
+                <img src="images/mars-exploration-rover.png" width="250" />
+            </div>
+            <div class="text">
+                <h2>Opportunity's Mission Is Complte</h2>
+                <p><em>sols 5347 to 5353, Feb. 7, 2019 - Feb. 13, 2019:</em></p>
+                <p>No response has been received from Opportunity since Sol 5111 (June 10, 2018), amid a planet-encircling dust storm on Mars.</p>
+                <a href="#">Read More ></a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 
+<pre><code class="language-html">
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+        &lt;link rel="stylesheet" href="prism.css"&gt;
+    &lt;/head&gt;
+    
+    &lt;body&gt;
+        &lt;h1&gt;Query Selectors&lt;/h1&gt;
+    
+        &lt;p&gt;A query selector is the methodology used to select tags in the Document Object Model&lt;/p&gt;
+        &lt;div&gt;
+            &lt;img src="images/mars-exploration-rover.png" width="50" /&gt;
+            &lt;span&gt;Image text&lt;/span&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;section&gt;&lt;/section&gt;
+        &lt;/div&gt;
+    &lt;body&gt;
+</code></pre>
+
+    <h2>Document Object Model</h2>
+    <p>A tree of all of the tags loaded in memory.</p>
+
+
+
+
+    <ul>
+        <li>
+            HTML
+            <ul>
+                <li>
+                    HEAD
+                    <UL>
+                        <li>
+                            META
+                        </li>
+                        <li>
+                            META
+                        </li>
+                        <li>
+                            TITLE
+                        </li>
+                    </UL>
+                </li>
+                <li>
+                    BODY
+                    <UL>
+                        <li>H1</li>
+<li>p</li>
+<li>div</li>
+<ul>
+    <li>img</li>
+    <li>span</li>
+    <li>div</li>
+    <li>div</li>
+    <li>div</li>
+    <li>section</li>
+</ul>
+<li>h2</li>
+<li>p</li>
+                    </UL>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+
+    <p>Hello world 2</p> -->
+    <script src="prism.js"></script>
+</body>
+
+</html>
+
+<!-- Document Object Model -->
+<!-- A tree of all of the tags loaded in memory.-->

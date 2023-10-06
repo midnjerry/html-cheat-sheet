@@ -12,6 +12,7 @@
             margin: 50px;
             display: flex;
             flex-direction: column;
+            background-color: white;
         }
 
         .parent > div {
@@ -19,9 +20,29 @@
             padding: 10px;
         }
 
+        .bottom-half {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .text-container {
+            width: 400px;
+        }
+
         .title {
             text-align: center;
-            font-size: 1.5em;
+        }
+
+        .title > h2 {
+            margin-top: 60px;
+            margin-bottom: 5px;
+        }
+
+        #rover {
+            width: 300px;
+            border: 0px;
         }
     </style>
 </head>
@@ -52,6 +73,9 @@
             </li>
             <li class="nav-link">
                 <a href="flexbox.html">Flexbox</a>
+            </li>
+            <li class="nav-link">
+                <a href="array-higher-order-functions.html">Array Higher Order Functions</a>
             </li>
         </ul>
     </nav>
@@ -142,10 +166,71 @@
 &lt;/div&gt;
     </code></pre>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="parent">
+        <div class="title">Rover Update</div>
+        <div class></div>    
+    </div> -->
+
+
+
+
 <div class="parent">
-    <div class="title">Rover Update</div>
-    <div class></div>
+    <div class="title"><h2>Rover Update</h2></div>
+    <div class="bottom-half">
+        <div><img id="rover" src="images/mars-exploration-rover.png"/></div>
+        <div class="text-container">
+                <h3>Opportunity's Mission is Complete</h3>
+                <p><em>sols 5347 to 5353, Feb.7, 2019 - Feb 13, 2019;</em></p>
+                <p>No response has been received from Opportunity since Sol 5111
+                    (June 10, 2018), amid a planet-encircling dust storm on Mars.
+                </p>
+                <a href="">Read More ></a>
+        </div>
+    </div>    
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <img src="images/nasa-snapshot-04.png"/>

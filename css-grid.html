@@ -10,13 +10,26 @@
 
     <style>
         .container {
-            display: grid;
+            display:grid;
             grid-template-columns: 25% 25% 25% 25%;
             grid-template-rows: auto;
             grid-template-areas:
                 "header header header header" /* note lack of semicolon! */
-                "main main . sidebar" /* note lack of semicolon! */
-                "footer footer footer footer"; /* note the semicolon! */
+                "main    main  sidebar sidebar" /* note lack of semicolon! */
+                "footer footer sidebar sidebar"; /* note the semicolon! */
+        }
+
+        @media only screen and (max-width: 500px) {
+            .container {
+            display:grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas:
+                 "header"
+                 "main"
+                 "sidebar"
+                 "footer";                
+        }
         }
 
         .container>div {
@@ -77,6 +90,9 @@
             </li>
             <li class="nav-link">
                 <a href="flexbox.html">Flexbox</a>
+            </li>
+            <li class="nav-link">
+                <a href="array-higher-order-functions.html">Array Higher Order Functions</a>
             </li>
         </ul>
     </nav>
