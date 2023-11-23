@@ -8,6 +8,31 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="prism.css">
     <style>
+        .example1{
+            display:flex;
+            gap:10px;
+            justify-content: right;
+        }
+        .example2{
+            display:flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 500px;
+        }
+        .example3{
+            display: flex;
+            flex-direction: column;
+        }
+        .thumbnail{
+            width:100px;
+            height:100px;
+            background-image: url('/images/paris.jpg');
+            border: 1px solid black;
+            background-size: cover;
+        }
+        .images {
+            width: 100%;
+        }
         .parent {
             margin: 50px;
             display: flex;
@@ -51,52 +76,72 @@
     <header>
         <h1>HTML CHEAT SHEET</h1>
     </header>
-    <nav>
-        <ul>
-            <li class="nav-link">
-                <a href="index.html">Headings</a>
-            </li>
-            <li class="nav-link">
-                <a href="tables.html">Tables</a>
-            </li>
-            <li class="nav-link">
-                <a href="lists.html">Lists</a>
-            </li>
-            <li class="nav-link">
-                <a href="forms.html">Forms</a>
-            </li>
-            <li class="nav-link">
-                <a href="semantic-tags.html">Semantic Tags</a>
-            </li>
-            <li class="nav-link">
-                <a href="css-grid.html">CSS Grid</a>
-            </li>
-            <li class="nav-link">
-                <a href="flexbox.html">Flexbox</a>
-            </li>
-            <li class="nav-link">
-                <a href="array-higher-order-functions.html">Array Higher Order Functions</a>
-            </li>
-        </ul>
+    <nav id="navbar">
+        <script src="nav-injector.js"></script>
     </nav>
     <main>
         <article>
             <h2>Flexbox</h2>
-            <p>Flexbox seems weird at first, but once you get the hang of it, it's very easy.  Flexbox only affects
-                the DIRECT CHILDREN of a tag.  You can then either organize the children as a row or column.  And that's it!
+            <p>Flexbox is a css framework that allows you to position elements without knowing the exact dimensions of your screen width and height.
+               Unlike absolute positioning, it is a responsive framework that can scale or adjust based on varying screen resolutions. For example, you
+               could: 
+            </p>
+            <ul>
+                <li>
+                    <p>Display 3 buttons in a row horizontally with a 10px gap between each with last button pressing the right margin</p>
+                    <div class="example1"><button>1</button><button>2</button><button>3</button></div>
+                </li>
+                <li>
+                    Display images as thumbnails positioned in a grid pattern
+                    <div class="example2"><div class="thumbnail">&nbsp;</div><div class="thumbnail">&nbsp;</div><div class="thumbnail">&nbsp;</div><div class="thumbnail">&nbsp;</div><div class="thumbnail">&nbsp;</div><div class="thumbnail">&nbsp;</div><div class="thumbnail">&nbsp;</div><div class="thumbnail">&nbsp;</div>
+                </li>
+                <li>
+                    Display a list of links as a column on left side of page
+                    <div class="example3"><a href="#">Link 1</a><a href="#">Link 2</a><a href="#">Link 3</a></div>
+                </li>
+            </ul>
+            <p>
+                 Basically you can use flexbox to position elements either vertically or horizontally. This is done by setting up an element that acts as a container.
+                 All of the children elements of that container can then be positioned vertically or horizontally with various justification and alignment options.  This
+                 is very simplistic and limited in usefulness until you understand the following rule: 
+            </p>
+            <p style="text-align: center">
+                <strong>The container element marked as flex only affects or positions its DIRECT children, not all descendents.</strong>
             </p>
             <p>
-                It seems very simplistic, but the rules of Flexbox build on top of this simplicity to make a powerful layout tool.  That being said, Flexbox will solve about ~70%-80% of your problems.  
+                Let's look at the example below.  The parent has styling of <code>display: flex;</code>.
+            </p>
+            <pre><code class="language-html">&lt;style&gt;
+.parent {
+    display: flex;
+}
+&lt;/style&gt;
+
+&lt;div class="parent"&gt; &lt;!-- I am the container--&gt;
+    &lt;div&gt;I am affected by flex&lt;/div&gt;
+    &lt;div&gt; I am affected by flex
+        &lt;div&gt;I am not affected&lt;/div&gt;
+        &lt;div&gt;I am not affected&lt;/div&gt;
+        &lt;div&gt;I am not affected&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;I am affected by flex&lt;/div&gt;
+    &lt;div&gt;I am affected by flex&lt;/div&gt;
+&lt;/div&gt;
+                </code></pre>
+
+            <p>
+                Again it seems very simplistic, but the rules of Flexbox build on top of this simplicity to make a powerful layout tool.  That being said, Flexbox will solve about ~80%-90% of your problems.  
                 For those situations where Flexbox is not an easy solution, Flexbox becomes extremely frustrating.
             </p>
             <p>
-                Use the following link for reference: <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox" target="_blank">https://css-tricks.com/snippets/css/a-guide-to-flexbox</a>
+                The general idea of flex is simple, but there are many underlying options available for you.  Carefully study and use the following link for reference: <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox" target="_blank">https://css-tricks.com/snippets/css/a-guide-to-flexbox</a>
             </p>
+            <h2>Real world example</h2>
             <p>So how do you use it?  First you need to break your layout into a series of cells that can be organized as columns or as rows. Let's take a look at an example.  This is a 
                 snippet from the <a href="https://mars.nasa.gov/mer/" target="_blank">NASA MARS ROVER</a> page.  Let's focus on recreating the white section.
             </p>
 
-            <img src="images/nasa-snapshot-01.png"/>
+            <img class="images" src="images/nasa-snapshot-01.png"/>
 
             <p>
                 Let's mark out the entire section with a div.
@@ -112,13 +157,13 @@
 &lt;div class="parent"&gt;
 &lt;/div&gt;
 </code></pre>
-<img src="images/nasa-snapshot-02.png"/>
+<img class="images" src="images/nasa-snapshot-02.png"/>
 <p>
     Now let's look for any rows or columns that we split the picture into.  As you can see, we can cleanly separate
     the page into two segments stacked on top of each other.  Remember, flexbox only has an effect on the children of a tag.
     That being said, the two CHILDREN tags of the parent tag should be oriented in a column format.
 </p>
-<img src="images/nasa-snapshot-03.png"/>
+<img class="images" src="images/nasa-snapshot-03.png"/>
 <p>Let's set up our children tags and then orient them in a column.</p>
 <pre><code class="language-html">
 &lt;style&gt;
@@ -166,27 +211,10 @@
 &lt;/div&gt;
     </code></pre>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- <div class="parent">
         <div class="title">Rover Update</div>
         <div class></div>    
     </div> -->
-
-
-
 
 <div class="parent">
     <div class="title"><h2>Rover Update</h2></div>
@@ -203,43 +231,9 @@
     </div>    
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<img src="images/nasa-snapshot-04.png"/>
-<img src="images/nasa-snapshot-05.png"/>
-
-            
-
-
-        </article>
+<img class="images" src="images/nasa-snapshot-04.png"/>
+<img class="images" src="images/nasa-snapshot-05.png"/>
+</article>
         <section>
             <h2>Did you know?</h2>
             <p>

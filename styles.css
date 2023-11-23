@@ -1,15 +1,29 @@
 body {
+    margin: 0px;
     background-color: gainsboro;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: min-content auto min-content;
+    grid-template-areas:
+        "header header"   /* note lack of semicolon! */
+        "navbar main"           /* note lack of semicolon! */
+        "footer footer";  /* note the semicolon! */
 }
 
 header {
     background-color: pink;
     margin: 1px;
+    grid-area: header;
 }
 
 header > h1 {
     padding: 0px;
     margin: 0px;
+}
+
+#navbar {
+    grid-area:navbar;
 }
 
 nav {
@@ -19,7 +33,7 @@ nav {
 }
 
 .nav-link {
-    display: inline-block;
+    display: block;
     font-size: 20px;
     padding: 20px;
 }
@@ -36,6 +50,8 @@ figure {
 main {
     /* border: 1px solid blue; */
     background-color: bisque;
+    grid-area: main;
+    overflow: auto;
 }
 
 article {
@@ -54,6 +70,7 @@ section {
 }
 
 footer {
+    grid-area: footer;
     background-color: aquamarine;
     margin: 1px;
 }
