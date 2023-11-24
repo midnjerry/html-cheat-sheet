@@ -53,19 +53,56 @@ export default {
 };
 &lt;/script&gt;
 </code></pre>
+<h2>Parent Component to Child Component Communication</h3>
+<h3>Parent.vue</h3>
+<pre><code class="language-js">&lt;template&gt;
+    &lt;child v-bind:parameter="widget" v-on:customEvent="handleCustomEvent($event)" /&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import Child from 'path/to/Child.vue';
 
-<h3>Component to Component Communication</h3>
-<h4>Parent to Child Relationship</h4>
-<ul>
-    <li>
-        Input: Props
-    </li>
-    <li>
-        Output: Event
-    </li>
+export default {
+    name: 'parent',
+    components: { Child },
+    data() {
+        return {
+            widget: {
+                color: 'red',
+                sprockets: 3
+            }
+        }
+    },
+    methods: {
+        handleCustomEvent(payload) {
+            console.log('You selected ', payload, ' sprocket(s).');
+            // Parent and Child should print same thing
+            this.widget.sprockets = payload;
+        }
+    }    
+};
+&lt;/script&gt;
+</code></pre>
+<h3>Child.vue</h3>
+<pre><code class="language-js">&lt;template&gt;
+    &lt;button v-on:click="onClick(1)"&gt;Choose Sprockets of 1&lt;/button&gt;
+    &lt;button v-on:click="onClick(2)"&gt;Choose Sprockets of 2&lt;/button&gt;
+    &lt;button v-on:click="onClick(3)"&gt;Choose Sprockets of 3&lt;/button&gt;
+&lt;/template&gt;
 
-</ul>
-
+&lt;script&gt;
+export default {
+    name: 'child',
+    props: ['parameter'],
+    methods: {
+        onClick(numOfSprockets){
+            this.$emit('customEvent', numOfSprockets);
+            console.log('You selected ', numOfSprockets, ' sprocket(s).');
+            // Parent and Child should print same thing
+        }
+    }       
+};
+&lt;/script&gt;
+</code></pre>
     </main>
     <footer>
         FOOTER: Have a blessed day!
