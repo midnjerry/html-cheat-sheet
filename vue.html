@@ -53,17 +53,22 @@ export default {
 };
 &lt;/script&gt;
 </code></pre>
-<h2>Parent Component to Child Component Communication</h3>
-<h3>Parent.vue</h3>
+<h2>Parent Component to Child Component Communication</h2>
+This example demonstrates the data communication between a Parent component and a Child component.  The Parent component displays information about the widget.
+It then feeds the widget object to the child through a <em>prop</em>.  When the user clicks a button the Child Component detects the event then
+creates it's own custom event <em>widgetEvent</em> to notify the Parent Component.  The Parent Component captures this event and updates the widget's sprocket value.
+
+<h3>ParentComponent.vue</h3>
 <pre><code class="language-js">&lt;template&gt;
-    &lt;child v-bind:parameter="widget" v-on:customEvent="handleCustomEvent($event)" /&gt;
+    &lt;p&gt;The {{ widget.color }} widget has {{ widget.sprockets }} sprocket(s).&lt;/p&gt;
+    &lt;child-component v-bind:parameter="widget" v-on:sprocketEvent="handleCustomEvent($event)" /&gt;
 &lt;/template&gt;
 &lt;script&gt;
-import Child from 'path/to/Child.vue';
+import ChildComponent from 'path/to/ChildComponent.vue';
 
 export default {
-    name: 'parent',
-    components: { Child },
+    name: 'parent-component',
+    components: { ChildComponent },
     data() {
         return {
             widget: {
@@ -73,31 +78,31 @@ export default {
         }
     },
     methods: {
-        handleCustomEvent(payload) {
-            console.log('You selected ', payload, ' sprocket(s).');
-            // Parent and Child should print same thing
-            this.widget.sprockets = payload;
+        handleCustomEvent(numOfSprockets) {
+            console.log('ParentComponent has captured event from ChildComponent')
+            this.widget.sprockets = numOfSprockets;
         }
     }    
 };
 &lt;/script&gt;
 </code></pre>
-<h3>Child.vue</h3>
+<h3>ChildComponent.vue</h3>
 <pre><code class="language-js">&lt;template&gt;
-    &lt;button v-on:click="onClick(1)"&gt;Choose Sprockets of 1&lt;/button&gt;
-    &lt;button v-on:click="onClick(2)"&gt;Choose Sprockets of 2&lt;/button&gt;
-    &lt;button v-on:click="onClick(3)"&gt;Choose Sprockets of 3&lt;/button&gt;
+    Choose new sprocket value for {{ parameter.color }} widget:
+    &lt;button v-on:click="onClick(1)"&gt;1&lt;/button&gt;
+    &lt;button v-on:click="onClick(2)"&gt;2&lt;/button&gt;
+    &lt;button v-on:click="onClick(3)"&gt;3&lt;/button&gt;
 &lt;/template&gt;
 
 &lt;script&gt;
 export default {
-    name: 'child',
-    props: ['parameter'],
+    name: 'child-component',
+    props: ['parameter'],              // USAGE: &lt;child-component v-bind:parameter="{some value or object}" /&gt;
     methods: {
         onClick(numOfSprockets){
-            this.$emit('customEvent', numOfSprockets);
-            console.log('You selected ', numOfSprockets, ' sprocket(s).');
-            // Parent and Child should print same thing
+            // a new sprocketEvent with a payload of the number selected is fired up for the Parent to capture.
+            this.$emit('sprocketEvent', numOfSprockets);
+            console.log('You selected ', numOfSprockets, ' sprocket(s).');            
         }
     }       
 };
