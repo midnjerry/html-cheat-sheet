@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3 Cheat Sheet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="prism.css">
+    <script src="prism.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>VUE3 CHEAT SHEET</h1>
+    </header>
+    <nav id="navbar">
+        <script src="nav-injector.js"></script>
+    </nav>
+    <main>
+        <h2>Vue3 Snippets and Tips</h2>
+
+        <h3>Script Section</h3>
+<pre><code class="language-js">&lt;script&gt;
+    import Spinner from 'path/to/Spinner.vue';
+    
+    export default {
+        name: 'component-name',
+        components: { Spinner },
+        props: ['parameter1', 'parameter2']
+        data() {
+            return {
+                num: 0,
+                str: '',
+                array: []
+            }
+        },
+        methods(): {
+            add(a, b) {
+                return a + b;
+            }
+        },
+        computed() {
+            derivedVariableName(){
+                return this.num + 20;   // whenever this.num is modified, derivedVariableName is recalculated
+            }
+        }
+        created() {
+            // Run on component startup
+        }    
+    };
+&lt;/script&gt;
+</code></pre>
+
+
+    </main>
+    <footer>
+        FOOTER: Have a blessed day!
+    </footer>
+</body>
+
+</html>
+
+
+

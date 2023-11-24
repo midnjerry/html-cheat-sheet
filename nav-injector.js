@@ -26,5 +26,8 @@ navbar.innerHTML = `
         <li class="nav-link">
             <a href="array-higher-order-functions.html">Array Higher Order Functions</a>
         </li>
+        <li class="nav-link">
+            <a href="vue.html">Vue.js Cheat Sheet</a>
+        </li>
     </ul>
 `
