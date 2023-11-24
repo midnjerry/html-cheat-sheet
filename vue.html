@@ -20,38 +20,51 @@
     <main>
         <h2>Vue3 Snippets and Tips</h2>
 
-        <h3>Script Section</h3>
+        <h3>Script Template</h3>
 <pre><code class="language-js">&lt;script&gt;
-    import Spinner from 'path/to/Spinner.vue';
-    
-    export default {
-        name: 'component-name',
-        components: { Spinner },
-        props: ['parameter1', 'parameter2']
-        data() {
-            return {
-                num: 0,
-                str: '',
-                array: []
-            }
-        },
-        methods(): {
-            add(a, b) {
-                return a + b;
-            }
-        },
-        computed() {
-            derivedVariableName(){
-                return this.num + 20;   // whenever this.num is modified, derivedVariableName is recalculated
-            }
+import Spinner from 'path/to/Spinner.vue';
+
+export default {
+    name: 'component-name',
+    components: { Spinner },
+    props: ['parameter1', 'parameter2'],
+    data() {
+        return {
+            num: 0,
+            str: '',
+            array: [],
+            widgetId: this.$route.params.id,  // To get from path parameter of route (must match!)
+            person: this.$store.state.person,  // To access data from vuex store
         }
-        created() {
-            // Run on component startup
-        }    
-    };
+    },
+    methods: {
+        add(a, b) {
+            return a + b;
+        }
+    },
+    computed: {
+        derivedVariableName(){
+            return this.num + 20;   // whenever this.num is modified, derivedVariableName is recalculated
+        }
+    },
+    created() {
+        // Run on component startup
+    }    
+};
 &lt;/script&gt;
 </code></pre>
 
+<h3>Component to Component Communication</h3>
+<h4>Parent to Child Relationship</h4>
+<ul>
+    <li>
+        Input: Props
+    </li>
+    <li>
+        Output: Event
+    </li>
+
+</ul>
 
     </main>
     <footer>
